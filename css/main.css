@@ -1,0 +1,11 @@
+/*This file is used to import all css files to one location*/
+
+@import "header.css";
+@import "home.css";
+@import "wrapper.css";
+@import "footer.css";
+@import "recipe-selection.css";
+@import "search-bar.css";
+@import "checkout.css";
+@import "kitchen-manager.css";
+@import "recipe-view.css";

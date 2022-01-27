@@ -1,0 +1,40 @@
+.header-title h1{
+    color: red;
+}
+.header-section{
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2%;
+}
+.header-title{
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+.header-button-wrapper{
+    display: flex;
+    justify-content: end;
+    flex-direction: column;
+    align-self: center;
+}
+.header{
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+}
+.header-element{
+    text-align: center;
+    margin-left: 10px;
+}
+.header button{
+    font-size: 3.0vw;
+    border-radius: 10px;
+    background-color: #f8f8ff;
+    border-color: #aaaaaa;
+    border-style: solid;
+    padding: 10px;
+}
+
+.header button:hover{
+    box-shadow: 5px 5px 5px 5px #aaaaaa;
+}

@@ -1,0 +1,130 @@
+<!-- Collaborators in this project:
+     Luis Lema, Brian Yi, Judy Park and Robert Finedore -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>EatWell</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://kit.fontawesome.com/0a1882e5a2.js" crossorigin="anonymous"></script>
+    <script>
+      // When the user clicks on <div>, open the popup
+      function myFunction() {
+        var popup = document.getElementById("myPopup");
+        var popup2 = document.getElementById("myPopup2");
+        popup.classList.toggle("show");
+        popup2.classList.toggle("show");
+
+        setTimeout(function () {
+          popup.classList.toggle("hide");
+          popup2.classList.toggle("hide");
+        }, 5000);
+      }
+    </script>
+  </head>
+  <body onload="myFunction()">
+    <div class="container">
+      <div class="page-wrapper">
+        <section class="d-flex header-section">
+          <div class="header-title" onclick="window.location.href = 'index.html';">
+            <h1>EatWell</h1>
+          </div>
+          <div class="header-button-wrapper">
+            <div class="header">
+              <div class="header-element">
+                <button title="Home" onclick="window.location.href='index.html'"><i class="fas fa-home"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Kitchen Manager" onclick="window.location.href='kitchen-manager.html'"><i class="fas fa-utensils"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Favorites"><i class="fas fa-heart"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Checkout" onclick="window.location.href='checkout.html'"><i class="fas fa-cart-plus"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Profile"><i class="fas fa-user"></i></button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <div class="main-content">
+          <!-- name of the recipe and save  -->
+          <div class="d-flex">
+            <div class="insta-content-title-wrapper mr-auto">
+              <p>Tofu Tikka Masala</p>
+            </div>
+            <div class="insta-content-title-wrapper">
+              <button type="button" class="btn btn-primary btn-circle"><i class="fa fa-check"></i></button>
+              <p>Save Recipe</p>
+            </div>
+          </div>
+
+          <!-- youtube video  -->
+          <div class="d-flex justify-content-center mt-3 mb-1">
+            <iframe width="500" height="350" src="https://www.youtube.com/embed/AHWmnA5AJg8"> </iframe>
+          </div>
+
+          <!-- options bar -->
+          <div class="d-flex row-wrapper justify-content-center mt-4 mb-2">
+            <button type="button" class="btn btn-info option-bar">Ingredients</button>
+            <button type="button" class="btn btn-info option-bar">Nutrition</button>
+            <button type="button" class="btn btn-info option-bar">Instructions</button>
+            <button type="button" class="btn btn-info option-bar">Review</button>
+          </div>
+
+          <!-- ingredients  -->
+          <div class="d-flex justify-content-center mt-5 mb-3">
+            <form action="">
+              <input type="checkbox" class="check-large mt-2 mb-2 displayLine" id="" name="" value="" />
+              <div class="d-flex flex-column displayLine">
+                <label>2 Table spoons of fresh Ginger</label>
+                <h6 class="money-leftMargin">$2.00</h6>
+              </div>
+              <br />
+
+              <input type="checkbox" class="check-large mt-2 mb-2" id="" name="" value="" />
+              <div class="d-flex flex-column displayLine popup">
+                <label>1 Garlic</label>
+                <div class="d-flex flex-row">
+                  <span class="popuptext" id="myPopup">Missing Ingredient in your Kitchen!</span>
+                  <i class="fas fa-exclamation-circle" style="color: red"></i>
+                  <h6 class="money-leftMargin">$1.00</h6>
+                </div>
+              </div>
+              <br />
+
+              <input type="checkbox" class="check-large mt-2 mb-2" id="" name="" value="" />
+              <div class="d-flex flex-column displayLine">
+                <label>1 Garam Masala</label>
+                <h6 class="money-leftMargin">$3.00</h6>
+              </div>
+              <br />
+
+              <input type="checkbox" class="check-large mt-2 mb-2" id="" name="" value="" />
+              <div class="d-flex flex-column displayLine popup">
+                <label>1 Onion</label>
+                <div class="d-flex flex-row">
+                  <span class="popuptext" id="myPopup2">Missing Ingredient in your Kitchen!</span>
+                  <i class="fas fa-exclamation-circle" style="color: red"></i>
+                  <h6 class="money-leftMargin">$1.50</h6>
+                </div>
+              </div>
+              <br />
+
+              <button type="button" onclick="window.location.href='checkout.html'" class="btn btn-success btn-lg mt-2 mb-2">Add to cart <i class="fas fa-cart-plus"></i></button>
+            </form>
+          </div>
+        </div>
+
+        <!-- div page-wrapper -->
+      </div>
+      <!-- main div -->
+    </div>
+  </body>
+</html>

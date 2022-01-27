@@ -1,0 +1,114 @@
+.kitchen-categories {
+    height: 100%;
+    width: 100%;
+    margin-left: 10%;
+}
+
+.kitchen-items {
+    height:auto;
+    width:auto;
+    margin-left: 150px;
+    margin-bottom: 50px;
+}
+
+.kitchen-items .kitchen-product-img {
+    text-align: center;
+    height:100px;
+    width:100px;
+    padding-right: 5px;
+}
+
+.kitchen-items .kitchen-product-name {
+    font-size: 30px;
+    margin-left: 20px;
+    font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+}
+
+.kitchen-items .kitchen-product-quantity input{
+    width: 40px;
+    margin-left: 50px;
+    margin-top: 8px;
+}
+
+.kitchen-items .kitchen-metrics {
+    font-size: 18px;
+    margin-top: 10px;
+    margin-left: 10px;
+    font-family: "Arial";
+}
+
+.kitchen-items .kitchen-product-removal {
+    margin-top: 17px;
+    margin-left: 50px;
+}
+
+.kitchen-items .kitchen-product-edit {
+    margin-top: 10px;
+    margin-left: 20px;
+}
+
+.delete_btn {
+    width: 100px;
+}
+
+.edit_btn {
+    width: 100px;
+}
+
+.add_btn {
+    width: 150px;
+    height: 50px;
+    margin-top: 5px;
+    border-radius:10px !important;
+    margin-left: 300px;
+    margin-bottom: 100px;
+}
+
+.btn-group-vertical > button{
+    margin-bottom:25px;
+    border-radius:10px !important;
+    width: auto;
+    border-color: #aaaaaa;
+}
+
+.btn.green{
+    color: white;
+    /*green*/
+    background-color: #85c995;
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #85c995;
+    color: white;
+    margin: auto;
+    padding: 2px 16px;
+    font-size:25px;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+  }
+  
+  /* Add Animation */
+  @keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+  }
+  
+  /* The Close Button */
+  .close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }

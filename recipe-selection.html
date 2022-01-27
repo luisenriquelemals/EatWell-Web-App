@@ -1,0 +1,196 @@
+<!-- Collaborators in this project:
+     Luis Lema, Brian Yi, Judy Park and Robert Finedore -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>EatWell</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://kit.fontawesome.com/0a1882e5a2.js" crossorigin="anonymous"></script>
+    <script src="./js/recipe-selection.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-wrapper">
+        <section class="d-flex header-section">
+          <div class="header-title" onclick="window.location.href = 'index.html';">
+            <h1>EatWell</h1>
+          </div>
+          <div class="header-button-wrapper">
+            <div class="header">
+              <div class="header-element">
+                <button title="Home" onclick="window.location.href='index.html'"><i class="fas fa-home"></i></button>
+              </div>
+
+              <div class="header-element">
+                <button title="Kitchen Manager" onclick="window.location.href='kitchen-manager.html'"><i class="fas fa-utensils"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Favorites"><i class="fas fa-heart"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Checkout" onclick="window.location.href='checkout.html'"><i class="fas fa-cart-plus"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Profile"><i class="fas fa-user"></i></button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="main-content">
+          <div class="search-filter-wrapper d-flex">
+            <div class="topnav">
+              <input id="recipe-searchbar" type="text" placeholder="Recipe Search..." />
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="search-error" style="display: none">
+              <p>Oops! That Recipe Does Not Exist</p>
+            </div>
+          </div>
+          <div class="sub-header-wrapper d-flex">
+            <div class="sub-header">
+              <h2>Indian</h2>
+            </div>
+            <div class="filter-button-wrapper">
+              <button><i class="fas fa-filter"></i></button>
+            </div>
+          </div>
+          <div class="row-wrapper-outer d-flex">
+            <div class="row-wrapper">
+              <div class="d-flex insta-wrapper">
+                <div onclick="window.location.href='recipe-view.html'" class="insta-content-wrapper">
+                  <div class="insta-content-title-wrapper">
+                    <p>Butter Chicken</p>
+                  </div>
+                  <div class="insta-content-picture-wrapper">
+                    <img src="img/indian-recipes/recipe-1.jpg" />
+                  </div>
+                  <div class="insta-content-footer-wrapper">
+                    <div class="rating-wrapper">
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                    </div>
+                    <div class="price-wrapper">
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                    </div>
+                  </div>
+                </div>
+                <div onclick="window.location.href='recipe-view.html'" class="insta-content-wrapper">
+                  <div class="insta-content-title-wrapper">
+                    <p>Tofu Tikka Masala</p>
+                  </div>
+                  <div class="insta-content-picture-wrapper">
+                    <img src="img/indian-recipes/recipe-2.jpg" />
+                  </div>
+                  <div class="insta-content-footer-wrapper">
+                    <div class="rating-wrapper">
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                    </div>
+                    <div class="price-wrapper">
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                    </div>
+                  </div>
+                </div>
+                <div onclick="window.location.href='recipe-view.html'" class="insta-content-wrapper">
+                  <div class="insta-content-title-wrapper">
+                    <p>Tandoori Chicken</p>
+                  </div>
+                  <div class="insta-content-picture-wrapper">
+                    <img src="img/indian-recipes/recipe-3.jpg" />
+                  </div>
+                  <div class="insta-content-footer-wrapper">
+                    <div class="rating-wrapper">
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                    </div>
+                    <div class="price-wrapper">
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div onclick="window.location.href='recipe-view.html'" class="d-flex insta-wrapper">
+                <div class="insta-content-wrapper">
+                  <div class="insta-content-title-wrapper">
+                    <p>Pea Curry</p>
+                  </div>
+                  <div class="insta-content-picture-wrapper">
+                    <img src="img/indian-recipes/recipe-4.jpg" />
+                  </div>
+                  <div class="insta-content-footer-wrapper">
+                    <div class="rating-wrapper">
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                    </div>
+                    <div class="price-wrapper">
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="insta-content-wrapper">
+                  <div class="insta-content-title-wrapper">
+                    <p>Butter Paneer</p>
+                  </div>
+                  <div class="insta-content-picture-wrapper">
+                    <img src="img/indian-recipes/recipe-5.jpg" />
+                  </div>
+                  <div class="insta-content-footer-wrapper">
+                    <div class="rating-wrapper">
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                      <p><i class="fas fa-star"></i></p>
+                    </div>
+                    <div class="price-wrapper">
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                    </div>
+                  </div>
+                </div>
+                <div class="insta-content-wrapper">
+                  <div class="insta-content-title-wrapper">
+                    <p>Butter Shrimp</p>
+                  </div>
+                  <div class="insta-content-picture-wrapper">
+                    <img src="img/indian-recipes/recipe-6.jpg" />
+                  </div>
+                  <div class="insta-content-footer-wrapper">
+                    <div class="rating-wrapper">
+                      <p><i class="fas fa-star"></i></p>
+                    </div>
+                    <div class="price-wrapper">
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                      <p><i class="fas fa-dollar-sign"></i></p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="d-flex footer-section">
+          <div class="footer"></div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

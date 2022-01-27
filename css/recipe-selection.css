@@ -1,0 +1,92 @@
+
+
+.search-filter-wrapper{
+    justify-content: center;
+    margin-bottom: 5%;
+}
+.filter-button-wrapper{
+    align-self: center;
+}
+
+
+.filter-button-wrapper button{
+    font-size: 3.0vw;
+    border-radius: 10px;
+    background-color: #f8f8ff;
+    border-color: #aaaaaa;
+    border-style: solid;
+    padding: 10px;
+}
+
+.filter-button-wrapper button:hover{
+    box-shadow: 5px 5px 5px 5px #aaaaaa;
+}
+
+.insta-content-wrapper:hover{
+    box-shadow: 5px 5px 5px 5px #aaaaaa;
+}
+.insta-wrapper{
+    grid-gap: 24px;
+    /*grid-template-columns: repeat(auto-fill,minmax(180px,1fr));*/
+    grid-auto-columns: 1fr;
+    grid-auto-flow: column;
+    display: grid;
+
+
+}
+.insta-content-picture-wrapper{
+    display: flex;
+    justify-content: center;
+    height: 90%;
+}
+.insta-content-title-wrapper{
+    display: flex;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.25rem;
+    text-align: center;
+}
+
+
+.insta-content-footer-wrapper{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+.insta-content-wrapper{
+    display: flex;
+    flex-direction: column;
+
+    cursor: pointer;
+    position: relative;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: #f8f8ff;
+    border-color: #aaaaaa;
+    border-style: solid;
+}
+.insta-content-footer-wrapper{
+    display: flex;
+    flex-direction: row;
+
+
+}
+.rating-wrapper{
+    display: flex;
+    justify-content: start;
+    margin-left: 2%;
+}
+.price-wrapper{
+    display: flex;
+    justify-content: end;
+    margin-right: 2%;
+}
+
+.sub-header-wrapper{
+    justify-content: space-between;
+    margin-bottom: 5%;
+}
+.sub-header h2{
+    font-weight: bold;
+    font-size: 3vw;
+}

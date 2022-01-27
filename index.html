@@ -1,0 +1,217 @@
+<!-- Collaborators in this project:
+     Luis Lema, Brian Yi, Judy Park and Robert Finedore -->
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>EatWell</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://kit.fontawesome.com/0a1882e5a2.js" crossorigin="anonymous"></script>
+    <script src="./js/index.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <div class="page-wrapper">
+        <section class="d-flex header-section">
+          <div class="header-title" onclick="window.location.href = 'index.html';">
+            <h1>EatWell</h1>
+          </div>
+          <div class="header-button-wrapper">
+            <div class="header">
+              <div class="header-element">
+                <button title="Kitchen Manager" onclick="window.location.href='kitchen-manager.html'"><i class="fas fa-utensils"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Favorites"><i class="fas fa-heart"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Checkout" onclick="window.location.href='checkout.html'"><i class="fas fa-cart-plus"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Profile"><i class="fas fa-user"></i></button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="main-content">
+          <div class="search-filter-wrapper d-flex">
+            <div class="topnav">
+              <input id="recipe-searchbar" type="text" placeholder="Recipe Search..." />
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="search-error" style="display: none">
+              <p>Oops! That Recipe Does Not Exist</p>
+            </div>
+          </div>
+          <div class="d-flex justify-content-center">
+            <div class="recipe-section-row">
+              <section class="d-flex category">
+                <div class="d-flex section-recipe-header">
+                  <div>
+                    <h2>Recommended</h2>
+                  </div>
+                  <div>
+                    <a href="">See more</a>
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="element-wrapper" onclick="window.location.href = 'recipe-selection.html';">
+                    <div class="main-element">
+                      <div class="picture-wrapper">
+                        <img src="img/categories/slow-cooker.jpg" />
+                      </div>
+                      <div class="recipe-label">
+                        <a>Slow Cooker</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="element-wrapper" onclick="window.location.href = 'recipe-selection.html';">
+                    <div class="main-element">
+                      <div class="picture-wrapper">
+                        <img src="img/categories/omlete.jpg" />
+                      </div>
+                      <div class="recipe-label">
+                        <a>Omlete</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="element-wrapper" onclick="window.location.href = 'recipe-selection.html';">
+                    <div class="main-element">
+                      <div class="picture-wrapper">
+                        <img src="img/categories/cake.jpg" />
+                      </div>
+                      <div class="recipe-label">
+                        <a>Cake</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="element-wrapper" onclick="window.location.href = 'recipe-selection.html';">
+                    <div class="main-element">
+                      <div class="picture-wrapper">
+                        <img src="img/categories/brownies.jpg" />
+                      </div>
+                      <div class="recipe-label">
+                        <a>Brownies</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="d-flex category">
+                <div class="d-flex section-recipe-header">
+                  <div>
+                    <h2>Cuisine</h2>
+                  </div>
+                  <div>
+                    <a href="">See more</a>
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="element-wrapper" onclick="window.location.href = 'recipe-selection.html';">
+                    <div class="main-element">
+                      <div class="picture-wrapper">
+                        <img src="img/categories/Chinese.jpg" />
+                      </div>
+                      <div class="recipe-label">
+                        <a>Chinese</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="element-wrapper" onclick="window.location.href = 'recipe-selection.html';">
+                    <div class="main-element">
+                      <div class="picture-wrapper">
+                        <img src="img/categories/thai.jpg" />
+                      </div>
+                      <div class="recipe-label">
+                        <a>Thai</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="element-wrapper" onclick="window.location.href = 'recipe-selection.html';">
+                    <div class="main-element">
+                      <div class="picture-wrapper">
+                        <img src="img/categories/mexican.jpg" />
+                      </div>
+                      <div class="recipe-label">
+                        <a>Mexican</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="element-wrapper" onclick="window.location.href = 'recipe-selection.html';">
+                    <div class="main-element">
+                      <div class="picture-wrapper">
+                        <img src="img/categories/indian.jpg" />
+                      </div>
+                      <div class="recipe-label">
+                        <a>Indian</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+              <section class="d-flex category">
+                <div class="d-flex section-recipe-header">
+                  <div>
+                    <h2>Dietary Restrictions</h2>
+                  </div>
+                  <div>
+                    <a href="">See more</a>
+                  </div>
+                </div>
+                <div class="options">
+                  <div class="element-wrapper" onclick="window.location.href = 'recipe-selection.html';">
+                    <div class="main-element">
+                      <div class="picture-wrapper">
+                        <img src="img/categories/vegetarian.jpg" />
+                      </div>
+                      <div class="recipe-label">
+                        <a>Vegetarian</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="element-wrapper" onclick="window.location.href = 'recipe-selection.html';">
+                    <div class="main-element">
+                      <div class="picture-wrapper">
+                        <img src="img/categories/vegan.jpg" />
+                      </div>
+                      <div class="recipe-label">
+                        <a>Vegan</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="element-wrapper" onclick="window.location.href = 'recipe-selection.html';">
+                    <div class="main-element">
+                      <div class="picture-wrapper">
+                        <img src="img/categories/gluten-free.jpg" />
+                      </div>
+                      <div class="recipe-label">
+                        <a>Gluten Free</a>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="element-wrapper" onclick="window.location.href = 'recipe-selection.html';">
+                    <div class="main-element">
+                      <div class="picture-wrapper">
+                        <img src="img/categories/pescatarian.jpg" />
+                      </div>
+                      <div class="recipe-label">
+                        <a>Pescatarian</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+            </div>
+          </div>
+        </div>
+        <section class="d-flex footer-section">
+          <div class="footer"></div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

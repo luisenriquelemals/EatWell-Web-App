@@ -1,0 +1,305 @@
+<!-- Collaborators in this project:
+     Luis Lema, Brian Yi, Judy Park and Robert Finedore -->
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>EatWell</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <script src="https://kit.fontawesome.com/0a1882e5a2.js" crossorigin="anonymous"></script>
+  </head>
+
+  <script>
+    // Maps to store item
+    var vegetablesMap = new Map([
+      ["carrot", [2, "count"]],
+      ["corn", [5, "count"]],
+    ]);
+    var fruitsMap = new Map([
+      ["apple", [3, "count"]],
+      ["grape", [2, "count"]],
+    ]);
+    var grainsMap = new Map([["bread", [1, "count"]]]);
+    var meatsMap = new Map([
+      ["chicken", [5, "pounds"]],
+      ["beef", [7, "pounds"]],
+    ]);
+    var dairysMap = new Map([["milk", [1, "gallon"]]]);
+    var spicesMap = new Map([["rosemary", [2, "ounces"]]]);
+    var othersMap = new Map([["olive oil", [17, "ounces"]]]);
+
+    // received passed information
+    var listvalues = localStorage.getItem("myValue");
+    var finalvalue = JSON.parse(listvalues);
+
+    // go through newly added ingredients and update
+    for (const [key, value] of Object.entries(finalvalue)) {
+      var num;
+      if (vegetablesMap.has(`${key}`)) {
+        num = vegetablesMap.get(`${key}`)[0] + parseInt(`${value}`);
+        console.log(num);
+      } else {
+        num = `${value}`;
+      }
+      vegetablesMap.set(`${key}`, [num, "count"]);
+    }
+
+    var resetValue = 0;
+    localStorage.setItem("myValue", resetValue);
+
+    $(document).ready(function () {
+      switch_to_green(document.getElementById("veggies"), "Vegetables");
+    });
+
+    // switches clicked button to green
+    function switch_to_green(el, category) {
+      // Get all buttons of group 1
+      let g1_buttons = document.querySelectorAll("#group1 .btn");
+      for (let i = 0; i < g1_buttons.length; i++) {
+        //Remove green color from unselected buttons
+        g1_buttons[i].classList.remove("green");
+      }
+
+      //Add green color to the only selected one
+      el.classList.add("green");
+
+      clearBox();
+
+      // Call fill page
+      fillPage(category);
+    }
+
+    // fill page for each category
+    function fillPage(category) {
+      // go through the maps via the category and add each item
+      if (category == "Vegetables") {
+        for (let [key, value] of vegetablesMap) {
+          add_item(category, key, value[0], value[1]);
+        }
+      } else if (category == "Fruit") {
+        for (let [key, value] of fruitsMap) {
+          add_item(category, key, value[0], value[1]);
+        }
+      } else if (category == "Grain") {
+        for (let [key, value] of grainsMap) {
+          add_item(category, key, value[0], value[1]);
+        }
+      } else if (category == "Meat") {
+        for (let [key, value] of meatsMap) {
+          add_item(category, key, value[0], value[1]);
+        }
+      } else if (category == "Dairy") {
+        for (let [key, value] of dairysMap) {
+          add_item(category, key, value[0], value[1]);
+        }
+      } else if (category == "Spices") {
+        for (let [key, value] of spicesMap) {
+          add_item(category, key, value[0], value[1]);
+        }
+      } else if (category == "Other") {
+        for (let [key, value] of othersMap) {
+          add_item(category, key, value[0], value[1]);
+        }
+      }
+    }
+
+    // remove the item from map
+    function removeFromMap(category, item) {
+      if (category == "Vegetables") {
+        vegetablesMap.delete(item);
+      } else if (category == "Fruit") {
+        fruitsMap.delete(item);
+      } else if (category == "Grain") {
+        grainsMap.delete(item);
+      } else if (category == "Meat") {
+        meatsMap.delete(item);
+      } else if (category == "Dairy") {
+        dairysMap.delete(item);
+      } else if (category == "Spices") {
+        spicesMap.delete(item);
+      } else if (category == "Other") {
+        othersMap.delete(item);
+      }
+    }
+
+    function addButton() {
+      // Get the modal
+      var modal = document.getElementById("myModal");
+
+      // Get the <span> element that closes the modal
+      var span = document.getElementsByClassName("close")[0];
+
+      // Show modal
+      modal.style.display = "block";
+
+      // When the user clicks on <span> (x), close the modal
+      span.onclick = function () {
+        modal.style.display = "none";
+      };
+
+      // When the user clicks anywhere outside of the modal, close it
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      };
+    }
+
+    // clears the categoryList div to empty out the listed items when category is changed
+    function clearBox(elementID) {
+      var div = document.getElementById("categoryList");
+      if (div != null) {
+        div.innerHTML = "";
+      }
+    }
+
+    // add a new item to the categoryList
+    function add_item(category, itemName, passedQuantity, passedMetric) {
+      // get the element
+      let categoryList = document.getElementById("categoryList");
+
+      // Create div for each kitchen item
+      let kitchenItem = categoryList.appendChild(document.createElement("div"));
+      kitchenItem.classList.add("kitchen-items");
+
+      // Create main row for item to be displayed
+      let itemRow = kitchenItem.appendChild(document.createElement("div"));
+      itemRow.classList.add("d-flex", "flex-row");
+
+      // Create div to hold the image within the main row
+      let pic = itemRow.appendChild(document.createElement("div"));
+      pic.classList.add("kitchen-product-img");
+      var img = document.createElement("img");
+      var imagePath = "img/kitchen-manager/" + itemName + ".jpeg";
+      img.src = imagePath;
+      pic.appendChild(img);
+
+      // Create a column flex box
+      let col1 = itemRow.appendChild(document.createElement("div"));
+      col1.classList.add("d-flelx", "flex-column");
+
+      // Add the item name to the first column flex box
+      let name = col1.appendChild(document.createElement("div"));
+      name.classList.add("kitchen-product-name");
+      name.innerHTML = itemName;
+
+      // Add edit button div under it
+      let edit = col1.appendChild(document.createElement("div"));
+      edit.classList.add("kitchen-product-edit");
+
+      // Create the button
+      let editBtn = edit.appendChild(document.createElement("button"));
+      editBtn.classList.add("edit_btn");
+      editBtn.innerHTML = '<i class="fa fa-edit"></i>  edit';
+
+      // Create a second column flex box
+      let col2 = itemRow.appendChild(document.createElement("div"));
+      col2.classList.add("d-flelx", "flex-column");
+
+      // Create a row flex box inside the column
+      let innerRow = col2.appendChild(document.createElement("div"));
+      innerRow.classList.add("d-flex", "flex-row");
+
+      // Create a div to contain the input
+      let quantityDiv = innerRow.appendChild(document.createElement("div"));
+      quantityDiv.classList.add("kitchen-product-quantity");
+
+      // Create input number type
+      let input = quantityDiv.appendChild(document.createElement("input"));
+      input.type = "number";
+      input.value = passedQuantity;
+      input.min = "1";
+
+      // If the edit button is clicked, focus on the input
+      editBtn.onclick = function () {
+        input.focus();
+      };
+
+      // Add metrics div
+      let metrics = innerRow.appendChild(document.createElement("div"));
+      metrics.classList.add("kitchen-metrics");
+      metrics.innerHTML = passedMetric;
+
+      // Create div for delete button
+      let removalDiv = col2.appendChild(document.createElement("div"));
+      removalDiv.classList.add("kitchen-product-removal");
+
+      // Create a delete button
+      let deleteBtn = removalDiv.appendChild(document.createElement("button"));
+      deleteBtn.classList.add("delete_btn");
+      deleteBtn.innerHTML = '<i class="fa fa-trash"></i>  delete';
+      deleteBtn.onclick = function () {
+        itemRow.innerHTML = "";
+        removeFromMap(category, itemName);
+      };
+    }
+  </script>
+
+  <body>
+    <div class="container">
+      <div class="page-wrapper">
+        <section class="d-flex header-section">
+          <div class="header-title" onclick="window.location.href = 'index.html';">
+            <h1>EatWell</h1>
+          </div>
+          <div class="header-button-wrapper">
+            <div class="header">
+              <div class="header-element">
+                <button title="Home" onclick="window.location.href='index.html'"><i class="fas fa-home"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Favorites"><i class="fas fa-heart"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Checkout" onclick="window.location.href='checkout.html'"><i class="fas fa-cart-plus"></i></button>
+              </div>
+              <div class="header-element">
+                <button title="Profile"><i class="fas fa-user"></i></button>
+              </div>
+            </div>
+          </div>
+        </section>
+        <div class="main-content">
+          <div class="search-filter-wrapper d-flex">
+            <div class="kitchensearch">
+              <input type="text" placeholder="Kitchen Manager Search..." />
+            </div>
+          </div>
+          <div class="d-flex flex-row">
+            <div class="d-flex flex-column">
+              <div class="kitchencategories">
+                <div class="btn-group-vertical" id="group1">
+                  <button type="button" id="veggies" class="btn btn-default" onclick="switch_to_green(this, 'Vegetables')">Vegetables</button>
+                  <button type="button" id="fruit" class="btn btn-default" onclick="switch_to_green(this, 'Fruit')">Fruit</button>
+                  <button type="button" id="grain" class="btn btn-default" onclick="switch_to_green(this, 'Grain')">Grain</button>
+                  <button type="button" id="meat" class="btn btn-default" onclick="switch_to_green(this, 'Meat')">Meat</button>
+                  <button type="button" id="dairy" class="btn btn-default" onclick="switch_to_green(this, 'Dairy')">Dairy</button>
+                  <button type="button" id="spices" class="btn btn-default" onclick="switch_to_green(this, 'Spices')">Spices</button>
+                  <button type="button" id="other" class="btn btn-default" onclick="switch_to_green(this, 'Other')">Other</button>
+                </div>
+              </div>
+            </div>
+            <div class="d-flex flex-column">
+              <div class="kitchen-product-name" id="categoryList"></div>
+              <div class="kitchen-product-add">
+                <button class="add_btn" onclick="addButton()"><i class="fa fa-plus"></i> add item</button>
+              </div>
+              <div id="myModal" class="modal">
+                <div class="modal-content">
+                  <span class="close">&times;</span>
+                  <p>Add Items has been clicked.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <section class="d-flex footer-section">
+          <div class="footer"></div>
+        </section>
+      </div>
+    </div>
+  </body>
+</html>

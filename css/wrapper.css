@@ -1,0 +1,38 @@
+h1{
+    font-size: 6.0vw;
+}
+h2{
+    font-size: 2.0vw;
+}
+a{
+    font-size: 1.50vw;
+    font-weight: bold;
+    color: black;
+}
+a:hover{
+    text-decoration: underline;
+    color: black;
+}
+.page-wrapper{
+    padding: 2%;
+    height: 100%;
+}
+
+.main-content{
+    background-color: #faebd7;
+    padding: 5%;
+    border-radius: 10px;
+}
+
+.row-wrapper{
+    display: grid;
+    grid-gap: 24px;
+    grid-template-rows: 1fr;
+    overflow-y: hidden;
+}
+
+.row-wrapper-outer{
+    display: flex;
+    justify-content: center;
+}
+
